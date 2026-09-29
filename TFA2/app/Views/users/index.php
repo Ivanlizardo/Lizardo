@@ -59,15 +59,15 @@
                     <tr>
                         <th>Username</th>
                         <th>Full Name</th>
-                        <th>Role</th>
+                        <th>Created At</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php foreach ($users as $user): ?>
                         <tr>
-                            <td><?= $user['username'] ?></td>
-                            <td><?= $user['email'] ?></td>
-                            <td><?= $user['role'] ?></td>
+                            <td><?= $user['username']?></td>
+                            <td><?= $user['full_name']?></td>
+                            <td><?= $user['created_at']?></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
