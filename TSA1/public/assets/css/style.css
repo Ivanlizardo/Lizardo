@@ -1,0 +1,1942 @@
+/* =========================================
+   GLOBAL RESET
+========================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #0b0d10;
+  color: #f5f5f5;
+  min-height: 100vh;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#appContainer {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* =========================================
+   SHARED NAVBAR
+   SAME FOR ALL PAGES
+========================================= */
+
+#navbar {
+  width: 100%;
+  min-height: 72px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 55px;
+
+  background: #0c0f12;
+  border-bottom: 1px solid #1f2429;
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* BRAND */
+
+#navbarBrand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+#navbarLogo {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+#navbarLogo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+#navbarBrandName {
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  color: #ffffff;
+}
+
+/* NAVIGATION LINKS */
+
+#navbarLinks {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+}
+
+.navbarLink {
+  position: relative;
+
+  padding: 26px 2px 23px;
+
+  color: #aeb4bb;
+  font-size: 14px;
+  font-weight: 500;
+
+  transition: 0.25s ease;
+}
+
+.navbarLink:hover {
+  color: #ffffff;
+}
+
+.navbarLink.active {
+  color: #ffffff;
+}
+
+.navbarLink.active::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 14px;
+
+  margin: auto;
+
+  width: 100%;
+  height: 2px;
+
+  background: #e9bd64;
+  border-radius: 50px;
+}
+
+/* =========================================
+   WELCOME PAGE
+========================================= */
+
+#welcomePage {
+  width: 100%;
+}
+
+/* =========================================
+   HERO SECTION
+========================================= */
+
+#welcomePageTasksIcon {
+  width: 44px;
+  height: 44px;
+  padding: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #3d321e;
+  color: #e5b75b;
+  flex-shrink: 0;
+}
+
+#welcomePageTasksIcon svg {
+  width: 100%;
+  height: 100%;
+}
+
+#welcomePageHero {
+  min-height: 430px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  background: #0b0d10;
+
+  overflow: hidden;
+}
+
+/* LEFT SIDE */
+
+#welcomePageHeroContent {
+  padding: 85px 40px 70px 70px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  position: relative;
+  z-index: 2;
+
+  background: #0b0d10;
+}
+
+#welcomePageLabel {
+  color: #8f969e;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  margin-bottom: 12px;
+}
+
+#welcomePageTitle {
+  max-width: 480px;
+
+  font-size: 52px;
+  line-height: 1.02;
+
+  font-weight: 800;
+
+  color: #ffffff;
+
+  margin-bottom: 17px;
+}
+
+#welcomePageTitleHighlight {
+  display: block;
+  color: #e5b75b;
+}
+
+#welcomePageDescription {
+  font-size: 15px;
+  color: #979da5;
+
+  margin-bottom: 28px;
+}
+
+/* DATE ROW */
+
+#welcomePageDateRow {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+}
+
+#welcomePageDateIcon {
+  width: 23px;
+  height: 23px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#welcomePageDateIcon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+#welcomePageCurrentDate {
+  font-size: 15px;
+  color: #e6e8ea;
+}
+
+#welcomePageTodayBadge {
+  padding: 7px 12px;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  color: #d8dce0;
+
+  background: #1b1f23;
+
+  border: 1px solid #252a2f;
+  border-radius: 20px;
+}
+
+/* =========================================
+   HERO IMAGE
+========================================= */
+
+#welcomePageHeroImage {
+  position: relative;
+
+  min-height: 430px;
+
+  overflow: hidden;
+}
+
+#welcomePageHeroImage img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+/* GRADIENT OVERLAY */
+
+#welcomePageHeroImage::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    to right,
+    #0d1013 0%,
+    rgba(13, 16, 19, 0.75) 13%,
+    rgba(13, 16, 19, 0.12) 48%,
+    rgba(13, 16, 19, 0.05) 100%
+  );
+
+  z-index: 1;
+}
+
+#welcomePageHeroImage::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.05) 0%,
+    rgba(0, 0, 0, 0.12) 70%,
+    #0b0d10 100%
+  );
+
+  z-index: 1;
+}
+
+/* =========================================
+   TODAY'S TASKS CARD
+========================================= */
+
+#welcomePageTasksCard {
+  width: calc(100% - 80px);
+  max-width: 1400px;
+
+  margin: -30px auto 60px;
+
+  padding: 22px 22px 18px;
+
+  background: #121518;
+
+  border: 1px solid #23282d;
+  border-radius: 18px;
+
+  position: relative;
+  z-index: 5;
+
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.24);
+}
+
+/* CARD HEADER */
+
+#welcomePageTasksHeader {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  margin-bottom: 18px;
+}
+
+#welcomePageTasksIcon {
+  width: 44px;
+  height: 44px;
+
+  padding: 9px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #3d321e;
+
+  flex-shrink: 0;
+}
+
+#welcomePageTasksIcon img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+}
+
+#welcomePageTasksHeadingText {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+#welcomePageTasksTitle {
+  font-size: 20px;
+  font-weight: 700;
+
+  color: #ffffff;
+}
+
+#welcomePageTasksSubtitle {
+  font-size: 13px;
+
+  color: #858c94;
+}
+
+/* =========================================
+   TABLE
+========================================= */
+
+#welcomePageTableWrapper {
+  width: 100%;
+
+  overflow-x: auto;
+
+  border: 1px solid #20252a;
+  border-radius: 12px;
+
+  background: #101316;
+}
+
+#welcomePageTaskTable {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  min-width: 650px;
+}
+
+#welcomePageTaskTable thead {
+  background: #171b1f;
+}
+
+#welcomePageTaskTable th {
+  padding: 13px 16px;
+
+  text-align: left;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  color: #aab0b6;
+
+  border-right: 1px solid #22272c;
+}
+
+#welcomePageTaskTable th:last-child {
+  border-right: none;
+}
+
+#welcomePageTaskTable td {
+  padding: 14px 16px;
+
+  font-size: 13px;
+
+  color: #d8dce0;
+
+  border-top: 1px solid #1d2227;
+  border-right: 1px solid #1d2227;
+}
+
+#welcomePageTaskTable td:last-child {
+  border-right: none;
+}
+
+#welcomePageTaskTable tbody tr {
+  background: #111417;
+
+  transition: background 0.2s ease;
+}
+
+#welcomePageTaskTable tbody tr:hover {
+  background: #15191d;
+}
+
+#welcomePageTaskTable th:first-child,
+#welcomePageTaskTable td:first-child {
+  width: 55px;
+  text-align: center;
+}
+
+#welcomePageTaskTable th:nth-child(3),
+#welcomePageTaskTable td:nth-child(3) {
+  width: 170px;
+}
+
+#welcomePageTaskTable th:nth-child(4),
+#welcomePageTaskTable td:nth-child(4) {
+  width: 180px;
+}
+
+/* =========================================
+   STATUS BADGES
+   REUSABLE FOR OTHER PAGES
+========================================= */
+
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 76px;
+
+  padding: 6px 11px;
+
+  border-radius: 20px;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  text-transform: capitalize;
+}
+
+/* PENDING */
+
+.statusPending {
+  background: #4b3917;
+  color: #f3c96f;
+
+  border: 1px solid #665025;
+}
+
+/* COMPLETED */
+
+.statusCompleted {
+  background: #153c2b;
+  color: #75d8a4;
+
+  border: 1px solid #245740;
+}
+
+/* IN PROGRESS */
+
+.statusProgress {
+  background: #16345a;
+  color: #76b8ff;
+
+  border: 1px solid #234d7d;
+}
+
+/* =========================================
+   EMPTY STATE
+========================================= */
+
+#welcomePageEmptyState {
+  min-height: 240px;
+
+  padding: 45px 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+#welcomePageEmptyIcon {
+  width: 55px;
+  height: 55px;
+
+  margin-bottom: 15px;
+}
+
+#welcomePageEmptyIcon img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  opacity: 0.75;
+}
+
+#welcomePageEmptyTitle {
+  font-size: 18px;
+
+  color: #f1f1f1;
+
+  margin-bottom: 7px;
+}
+
+#welcomePageEmptyText {
+  font-size: 13px;
+  color: #848b92;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 950px) {
+  #navbar {
+    padding: 0 30px;
+  }
+
+  #navbarLinks {
+    gap: 23px;
+  }
+
+  #welcomePageHero {
+    grid-template-columns: 1fr;
+  }
+
+  #welcomePageHeroContent {
+    padding: 65px 45px 45px;
+  }
+
+  #welcomePageHeroImage {
+    min-height: 300px;
+  }
+
+  #welcomePageTitle {
+    font-size: 44px;
+  }
+
+  #welcomePageTasksCard {
+    width: calc(100% - 50px);
+
+    margin-top: -20px;
+  }
+}
+
+@media (max-width: 700px) {
+  #navbar {
+    min-height: auto;
+
+    padding: 14px 20px;
+
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 12px;
+  }
+
+  #navbarLinks {
+    width: 100%;
+
+    gap: 10px;
+
+    justify-content: space-between;
+  }
+
+  .navbarLink {
+    padding: 8px 3px 12px;
+
+    font-size: 13px;
+  }
+
+  .navbarLink.active::after {
+    bottom: 3px;
+  }
+
+  #welcomePageHeroContent {
+    padding: 45px 25px 40px;
+  }
+
+  #welcomePageTitle {
+    font-size: 38px;
+  }
+
+  #welcomePageDescription {
+    font-size: 14px;
+  }
+
+  #welcomePageHeroImage {
+    min-height: 240px;
+  }
+
+  #welcomePageTasksCard {
+    width: calc(100% - 28px);
+
+    margin: -10px auto 35px;
+
+    padding: 16px;
+  }
+
+  #welcomePageTasksTitle {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  #navbarBrandName {
+    font-size: 17px;
+  }
+
+  #navbarLogo {
+    width: 34px;
+    height: 34px;
+  }
+
+  #navbarLinks {
+    overflow-x: auto;
+
+    justify-content: flex-start;
+
+    gap: 22px;
+  }
+
+  #welcomePageLabel {
+    font-size: 11px;
+  }
+
+  #welcomePageTitle {
+    font-size: 33px;
+  }
+
+  #welcomePageDateRow {
+    flex-wrap: wrap;
+  }
+
+  #welcomePageCurrentDate {
+    font-size: 14px;
+  }
+
+  #welcomePageTasksHeader {
+    align-items: flex-start;
+  }
+
+  #welcomePageTasksIcon {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* =========================================
+   TASKS PAGE
+========================================= */
+
+#tasksPageHeaderIcon {
+  width: 78px;
+  height: 78px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #3a2f1b;
+  border: 1px solid #59451f;
+  border-radius: 18px;
+  color: #e5b75b;
+  flex-shrink: 0;
+}
+
+#tasksPageHeaderIcon svg {
+  width: 100%;
+  height: 100%;
+}
+
+#tasksPageCardIcon {
+  width: 46px;
+  height: 46px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #3d321e;
+  border-radius: 50%;
+  color: #e5b75b;
+  flex-shrink: 0;
+}
+
+#tasksPageCardIcon svg {
+  width: 100%;
+  height: 100%;
+}
+
+#tasksPageEmptyIcon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 15px;
+  color: #858c94;
+}
+
+#tasksPageEmptyIcon svg {
+  width: 100%;
+  height: 100%;
+}
+
+#tasksPage {
+  width: 100%;
+  min-height: calc(100vh - 72px);
+
+  padding: 55px 60px 70px;
+
+  background: #0b0d10;
+}
+
+/* =========================================
+   TASKS PAGE HEADER
+========================================= */
+
+#tasksPageHeader {
+  width: 100%;
+  max-width: 1400px;
+
+  margin: 0 auto 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 25px;
+}
+
+#tasksPageHeaderContent {
+  flex: 1;
+}
+
+#tasksPageLabel {
+  margin-bottom: 9px;
+
+  color: #9aa1a9;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+#tasksPageTitle {
+  margin-bottom: 10px;
+
+  color: #ffffff;
+
+  font-size: 42px;
+  font-weight: 800;
+
+  line-height: 1.1;
+}
+
+#tasksPageDescription {
+  color: #9299a1;
+
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* HEADER ICON */
+
+#tasksPageHeaderIcon {
+  width: 78px;
+  height: 78px;
+
+  padding: 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #3a2f1b;
+
+  border: 1px solid #59451f;
+  border-radius: 18px;
+
+  flex-shrink: 0;
+}
+
+#tasksPageHeaderIcon img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+}
+
+/* =========================================
+   TASKS CARD
+========================================= */
+
+#tasksPageCard {
+  width: 100%;
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+  padding: 24px;
+
+  background: #121518;
+
+  border: 1px solid #23282d;
+  border-radius: 18px;
+
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.2);
+}
+
+/* =========================================
+   CARD HEADER
+========================================= */
+
+#tasksPageCardHeader {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  margin-bottom: 20px;
+}
+
+#tasksPageCardIcon {
+  width: 46px;
+  height: 46px;
+
+  padding: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #3d321e;
+
+  border-radius: 50%;
+
+  flex-shrink: 0;
+}
+
+#tasksPageCardIcon img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+}
+
+#tasksPageCardHeading {
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+#tasksPageCardTitle {
+  color: #ffffff;
+
+  font-size: 21px;
+  font-weight: 700;
+}
+
+#tasksPageCardSubtitle {
+  color: #858c94;
+
+  font-size: 13px;
+}
+
+/* =========================================
+   TASKS TABLE WRAPPER
+========================================= */
+
+#tasksPageTableWrapper {
+  width: 100%;
+
+  overflow-x: auto;
+
+  background: #101316;
+
+  border: 1px solid #20252a;
+  border-radius: 12px;
+}
+
+/* =========================================
+   TASKS TABLE
+========================================= */
+
+#tasksPageTaskTable {
+  width: 100%;
+
+  min-width: 850px;
+
+  border-collapse: collapse;
+}
+
+#tasksPageTaskTable thead {
+  background: #171b1f;
+}
+
+#tasksPageTaskTable th {
+  padding: 14px 16px;
+
+  text-align: left;
+
+  color: #aab0b6;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  border-right: 1px solid #24292e;
+}
+
+#tasksPageTaskTable th:last-child {
+  border-right: none;
+}
+
+#tasksPageTaskTable td {
+  padding: 15px 16px;
+
+  color: #d8dce0;
+
+  font-size: 13px;
+
+  border-top: 1px solid #1e2328;
+  border-right: 1px solid #1e2328;
+}
+
+#tasksPageTaskTable td:last-child {
+  border-right: none;
+}
+
+#tasksPageTaskTable tbody tr {
+  background: #111417;
+
+  transition: background 0.2s ease;
+}
+
+#tasksPageTaskTable tbody tr:hover {
+  background: #161a1e;
+}
+
+/* COLUMN WIDTHS */
+
+#tasksPageTaskTable th:first-child,
+#tasksPageTaskTable td:first-child {
+  width: 60px;
+
+  text-align: center;
+}
+
+#tasksPageTaskTable th:nth-child(3),
+#tasksPageTaskTable td:nth-child(3) {
+  width: 150px;
+}
+
+#tasksPageTaskTable th:nth-child(4),
+#tasksPageTaskTable td:nth-child(4) {
+  width: 170px;
+}
+
+#tasksPageTaskTable th:nth-child(5),
+#tasksPageTaskTable td:nth-child(5) {
+  width: 210px;
+}
+
+/* TASK TITLE */
+
+.tasksPageTaskTitle {
+  color: #ffffff !important;
+
+  font-weight: 500;
+}
+
+/* =========================================
+   REUSABLE STATUS BADGES
+   IF MERON NA SA WELCOME CSS,
+   HUWAG MO NA ULIT ILAGAY
+========================================= */
+
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 82px;
+
+  padding: 6px 11px;
+
+  border-radius: 20px;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  text-transform: capitalize;
+}
+
+.statusPending {
+  color: #f3c96f;
+
+  background: #4b3917;
+
+  border: 1px solid #665025;
+}
+
+.statusCompleted {
+  color: #75d8a4;
+
+  background: #153c2b;
+
+  border: 1px solid #245740;
+}
+
+.statusProgress {
+  color: #76b8ff;
+
+  background: #16345a;
+
+  border: 1px solid #234d7d;
+}
+
+/* =========================================
+   EMPTY STATE
+========================================= */
+
+#tasksPageEmptyState {
+  min-height: 280px;
+
+  padding: 45px 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+#tasksPageEmptyIcon {
+  width: 60px;
+  height: 60px;
+
+  margin-bottom: 15px;
+}
+
+#tasksPageEmptyIcon img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  opacity: 0.75;
+}
+
+#tasksPageEmptyTitle {
+  margin-bottom: 7px;
+
+  color: #f1f1f1;
+
+  font-size: 19px;
+}
+
+#tasksPageEmptyText {
+  color: #858c94;
+
+  font-size: 13px;
+}
+
+/* =========================================
+   TASKS PAGE RESPONSIVE
+========================================= */
+
+@media (max-width: 950px) {
+  #tasksPage {
+    padding: 45px 30px 60px;
+  }
+
+  #tasksPageTitle {
+    font-size: 38px;
+  }
+
+  #tasksPageHeaderIcon {
+    width: 68px;
+    height: 68px;
+  }
+}
+
+@media (max-width: 700px) {
+  #tasksPage {
+    padding: 35px 18px 45px;
+  }
+
+  #tasksPageHeader {
+    align-items: flex-start;
+  }
+
+  #tasksPageTitle {
+    font-size: 33px;
+  }
+
+  #tasksPageDescription {
+    font-size: 14px;
+  }
+
+  #tasksPageHeaderIcon {
+    width: 58px;
+    height: 58px;
+
+    padding: 12px;
+  }
+
+  #tasksPageCard {
+    padding: 16px;
+  }
+
+  #tasksPageCardTitle {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  #tasksPageHeader {
+    flex-direction: column;
+  }
+
+  #tasksPageHeaderIcon {
+    display: none;
+  }
+
+  #tasksPageTitle {
+    font-size: 30px;
+  }
+
+  #tasksPageCardHeader {
+    align-items: flex-start;
+  }
+
+  #tasksPageCardIcon {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* =========================================
+   PROFILE PAGE
+========================================= */
+
+#profilePageHeaderIcon {
+  width: 48px;
+  height: 48px;
+  padding: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #3d321e;
+  border-radius: 50%;
+  color: #e5b75b;
+  flex-shrink: 0;
+}
+
+#profilePageHeaderIcon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.profilePageInfoIcon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e5b75b;
+}
+
+.profilePageInfoIcon svg {
+  width: 100%;
+  height: 100%;
+}
+
+#profilePage {
+  width: 100%;
+  min-height: calc(100vh - 72px);
+
+  padding: 50px 60px 70px;
+
+  background: #0b0d10;
+}
+
+/* MAIN PROFILE CONTAINER */
+
+#profilePageContainer {
+  width: 100%;
+  max-width: 1400px;
+
+  margin: 0 auto;
+}
+
+/* =========================================
+   PROFILE HEADER
+========================================= */
+
+#profilePageHeader {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  margin-bottom: 22px;
+}
+
+/* HEADER ICON */
+
+#profilePageHeaderIcon {
+  width: 48px;
+  height: 48px;
+
+  padding: 11px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #3d321e;
+
+  border-radius: 50%;
+
+  flex-shrink: 0;
+}
+
+#profilePageHeaderIcon img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+}
+
+/* HEADER TEXT */
+
+#profilePageHeaderText {
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+#profilePageTitle {
+  color: #ffffff;
+
+  font-size: 24px;
+  font-weight: 700;
+}
+
+#profilePageSubtitle {
+  color: #858c94;
+
+  font-size: 13px;
+}
+
+/* =========================================
+   PROFILE CARD
+========================================= */
+
+#profilePageCard {
+  width: 100%;
+
+  min-height: 300px;
+
+  display: grid;
+  grid-template-columns: 260px 1fr;
+
+  gap: 30px;
+
+  padding: 28px 30px;
+
+  background: #121518;
+
+  border: 1px solid #23282d;
+  border-radius: 18px;
+
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.22);
+}
+
+/* =========================================
+   PROFILE PHOTO SECTION
+========================================= */
+
+#profilePagePhotoSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px;
+}
+
+#profilePagePhoto {
+  width: 190px;
+  height: 190px;
+
+  border-radius: 50%;
+
+  overflow: hidden;
+
+  border: 1px solid #d8aa53;
+
+  background: #1a1e22;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.28);
+}
+
+#profilePagePhoto img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+/* =========================================
+   PROFILE INFORMATION
+========================================= */
+
+#profilePageInformation {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+}
+
+/* EACH ROW */
+
+.profilePageInfoRow {
+  min-height: 70px;
+
+  display: grid;
+  grid-template-columns: 38px 130px 1fr;
+
+  align-items: center;
+
+  gap: 12px;
+
+  border-bottom: 1px solid #272c31;
+}
+
+.profilePageInfoRow:last-child {
+  border-bottom: none;
+}
+
+/* INFO ICON */
+
+.profilePageInfoIcon {
+  width: 24px;
+  height: 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profilePageInfoIcon img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  opacity: 0.9;
+}
+
+/* INFO LABEL */
+
+.profilePageInfoLabel {
+  color: #9da4ac;
+
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* INFO VALUE */
+
+.profilePageInfoValue {
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  word-break: break-word;
+}
+
+/* =========================================
+   EMPTY STATE
+========================================= */
+
+#profilePageEmptyState {
+  grid-column: 1 / -1;
+
+  min-height: 260px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+#profilePageEmptyTitle {
+  margin-bottom: 7px;
+
+  color: #ffffff;
+
+  font-size: 20px;
+}
+
+#profilePageEmptyText {
+  color: #858c94;
+
+  font-size: 13px;
+}
+
+/* =========================================
+   PROFILE PAGE RESPONSIVE
+========================================= */
+
+@media (max-width: 950px) {
+  #profilePage {
+    padding: 45px 30px 60px;
+  }
+
+  #profilePageCard {
+    grid-template-columns: 220px 1fr;
+
+    gap: 20px;
+  }
+
+  #profilePagePhoto {
+    width: 165px;
+    height: 165px;
+  }
+
+  .profilePageInfoRow {
+    grid-template-columns: 35px 115px 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  #profilePage {
+    padding: 35px 18px 45px;
+  }
+
+  #profilePageCard {
+    grid-template-columns: 1fr;
+
+    padding: 24px 20px;
+  }
+
+  #profilePagePhotoSection {
+    padding-bottom: 15px;
+  }
+
+  #profilePagePhoto {
+    width: 150px;
+    height: 150px;
+  }
+
+  .profilePageInfoRow {
+    grid-template-columns: 32px 110px 1fr;
+
+    min-height: 64px;
+  }
+
+  #profilePageTitle {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 500px) {
+  #profilePageCard {
+    padding: 20px 15px;
+  }
+
+  .profilePageInfoRow {
+    grid-template-columns: 28px 1fr;
+
+    gap: 10px;
+
+    padding: 13px 0;
+  }
+
+  .profilePageInfoLabel {
+    grid-column: 2;
+
+    font-size: 12px;
+  }
+
+  .profilePageInfoValue {
+    grid-column: 2;
+
+    margin-top: -5px;
+
+    font-size: 13px;
+  }
+
+  .profilePageInfoIcon {
+    grid-row: 1 / 3;
+  }
+
+  #profilePagePhoto {
+    width: 135px;
+    height: 135px;
+  }
+}
+
+/* =========================================
+   ABOUT PAGE
+========================================= */
+
+#aboutPage {
+  width: 100%;
+  min-height: calc(100vh - 72px);
+
+  padding: 50px 60px 70px;
+
+  background: #0b0d10;
+}
+
+/* MAIN CONTAINER */
+
+#aboutPageContainer {
+  width: 100%;
+  max-width: 1400px;
+
+  margin: 0 auto;
+}
+
+/* =========================================
+   ABOUT HEADER
+========================================= */
+
+#aboutPageHeader {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  margin-bottom: 22px;
+}
+
+#aboutPageHeaderIcon {
+  width: 48px;
+  height: 48px;
+
+  padding: 11px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #3d321e;
+
+  border-radius: 50%;
+
+  flex-shrink: 0;
+}
+
+#aboutPageHeaderIcon img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+}
+
+#aboutPageHeaderText {
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+#aboutPageTitle {
+  color: #ffffff;
+
+  font-size: 24px;
+  font-weight: 700;
+}
+
+#aboutPageSubtitle {
+  color: #858c94;
+
+  font-size: 13px;
+}
+
+/* =========================================
+   ABOUT CARD
+========================================= */
+
+#aboutPageCard {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: 38% 1fr;
+
+  gap: 35px;
+
+  padding: 32px;
+
+  background: #121518;
+
+  border: 1px solid #23282d;
+  border-radius: 18px;
+
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.22);
+}
+
+/* =========================================
+   LEFT IMAGE SECTION
+========================================= */
+
+#aboutPageImageSection {
+  min-height: 320px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 15px;
+}
+
+#aboutPageImage {
+  width: 100%;
+  max-width: 430px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#aboutPageImage img {
+  width: 100%;
+  height: auto;
+
+  object-fit: contain;
+}
+
+/* =========================================
+   RIGHT CONTENT
+========================================= */
+
+#aboutPageContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* SYSTEM INFORMATION */
+
+#aboutPageSystemInfo {
+  width: 100%;
+}
+
+#aboutPageSystemTitle {
+  margin-bottom: 12px;
+
+  color: #ffffff;
+
+  font-size: 31px;
+  font-weight: 800;
+
+  line-height: 1.08;
+}
+
+#aboutPageSystemTitle span {
+  display: block;
+
+  color: #e5b75b;
+}
+
+#aboutPageSystemDescription {
+  max-width: 720px;
+
+  color: #a0a7ae;
+
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+/* DIVIDER */
+
+#aboutPageDivider {
+  width: 100%;
+  height: 1px;
+
+  margin: 25px 0;
+
+  background: #272c31;
+}
+
+/* =========================================
+   DEVELOPER SECTION
+========================================= */
+
+#aboutPageDeveloper {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 15px;
+}
+
+#aboutPageDeveloperIcon {
+  width: 45px;
+  height: 45px;
+
+  padding: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+}
+
+#aboutPageDeveloperIcon img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+}
+
+#aboutPageDeveloperInfo {
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+#aboutPageDeveloperLabel {
+  color: #888f97;
+
+  font-size: 12px;
+}
+
+#aboutPageDeveloperName {
+  color: #e5b75b;
+
+  font-size: 18px;
+  font-weight: 700;
+}
+
+#aboutPageDeveloperCourse {
+  color: #d9dde1;
+
+  font-size: 13px;
+}
+
+#aboutPageDeveloperDescription {
+  color: #8f969e;
+
+  font-size: 12px;
+}
+
+/* =========================================
+   FOOTER MESSAGE
+========================================= */
+
+#aboutPageMessage {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  margin-top: 23px;
+}
+
+#aboutPageMessageIcon {
+  width: 18px;
+  height: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#aboutPageMessageIcon img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+}
+
+#aboutPageMessageText {
+  color: #8e959c;
+
+  font-size: 12px;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1000px) {
+  #aboutPage {
+    padding: 45px 30px 60px;
+  }
+
+  #aboutPageCard {
+    grid-template-columns: 34% 1fr;
+
+    gap: 25px;
+
+    padding: 26px;
+  }
+
+  #aboutPageSystemTitle {
+    font-size: 27px;
+  }
+}
+
+@media (max-width: 750px) {
+  #aboutPage {
+    padding: 35px 18px 45px;
+  }
+
+  #aboutPageCard {
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+
+    padding: 22px;
+  }
+
+  #aboutPageImageSection {
+    min-height: auto;
+
+    padding: 5px 20px 10px;
+  }
+
+  #aboutPageImage {
+    max-width: 320px;
+  }
+
+  #aboutPageContent {
+    text-align: left;
+  }
+
+  #aboutPageSystemTitle {
+    font-size: 25px;
+  }
+
+  #aboutPageDeveloper {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 500px) {
+  #aboutPageTitle {
+    font-size: 22px;
+  }
+
+  #aboutPageSystemTitle {
+    font-size: 23px;
+  }
+
+  #aboutPageSystemDescription {
+    font-size: 13px;
+  }
+
+  #aboutPageDeveloperName {
+    font-size: 16px;
+  }
+
+  #aboutPageCard {
+    padding: 18px;
+  }
+}
