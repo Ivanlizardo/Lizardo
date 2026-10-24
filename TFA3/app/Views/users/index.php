@@ -53,25 +53,65 @@
                     <h1>Users List</h1>
                     <p>View Users records</p>
                 </div>
+                
+                <a href="<?= site_url('users/new') ?>" class="addCustomerBtn">
+                    <span class="material-symbols-outlined">person_add</span>
+                    Add User
+                </a>
+
             </div>
             <table>
                 <thead>
                     <tr>
+                        <th>Avatar</th>
                         <th>Username</th>
                         <th>Full Name</th>
                         <th>Created At</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
+
                 <tbody>
                     <?php foreach ($users as $user): ?>
+                        <?php
+                            $avatarFilename = $user['avatar'] ?? null;
+
+                            $avatarPath = $avatarFilename
+                                ? FCPATH . 'uploads/avatars/' . basename($avatarFilename)
+                                : null;
+
+                            $avatarUrl = ($avatarPath && is_file($avatarPath))
+                                ? base_url('uploads/avatars/' . rawurlencode(basename($avatarFilename)))
+                                : base_url('assets/images/placeholder.png');
+                        ?>
+
                         <tr>
-                            <td><?= $user['username']?></td>
-                            <td><?= $user['full_name']?></td>
-                            <td><?= $user['created_at']?></td>
+                            <td>
+                                <img
+                                    src="<?= esc($avatarUrl, 'attr') ?>"
+                                    class="userAvatar"
+                                    alt="User Avatar"
+                                >
+                            </td>
+
+                            <td><?= esc($user['username']) ?></td>
+                            <td><?= esc($user['full_name']) ?></td>
+                            <td><?= esc($user['created_at']) ?></td>
+
+                            <td>
+                                <a
+                                    href="<?= site_url('users/' . $user['id'] . '/edit') ?>"
+                                    class="editBtn"
+                                >
+                                    <span class="material-symbols-outlined">edit</span>
+                                    Edit
+                                </a>
+                            </td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
             </table>
+
         </div>
     </div>
 </body>
