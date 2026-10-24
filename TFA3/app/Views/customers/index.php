@@ -53,6 +53,10 @@
                     <h1>Customers List</h1>
                     <p>View Customers records</p>
                 </div>
+                <a href="<?= site_url('customers/new') ?>" class="addCustomerBtn">
+                    <span class="material-symbols-outlined">person_add</span>
+                    Add Customer
+                </a>
             </div>
             <table>
                 <thead>
@@ -60,17 +64,26 @@
                         <th>Full Name</th>
                         <th>Email</th>
                         <th>Phone</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php foreach ($customers as $customer): ?>
                         <tr>
-                            <td><?= $customer['full_name'] ?></td>
-                            <td><?= $customer['email'] ?></td>
-                            <td><?= $customer['phone'] ?></td>
+                            <td><?= esc($customer['full_name']) ?></td>
+                            <td><?= esc($customer['email']) ?></td>
+                            <td><?= esc($customer['phone'] ?? '') ?></td>
+                            <td>
+                                <a href="<?= site_url('customers/' . $customer['id'] . '/edit') ?>"
+                                class="editBtn">
+                                    <span class="material-symbols-outlined">edit</span>
+                                    Edit
+                                </a>
+                            </td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
+
             </table>
         </div>
     </div>
