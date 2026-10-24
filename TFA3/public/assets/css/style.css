@@ -769,3 +769,147 @@ nav ul li:last-child {
   background: #f26522;
 }
 
+/* =========================
+   CUSTOMER FORM
+========================= */
+
+.customerForm {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 600px;
+  margin-top: 20px;
+}
+
+.customerForm label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #172430;
+}
+
+.customerForm input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 13px;
+  outline: none;
+}
+
+.customerForm input:focus {
+  border-color: #f26a21;
+}
+
+.formActions {
+  display: flex;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.saveBtn {
+  background: #f26a21;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.saveBtn:hover {
+  background: #d95815;
+}
+
+.cancelBtn {
+  background: #eeeeee;
+  color: #172430;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.formErrors {
+  background: #ffe5e5;
+  color: #b42318;
+  padding: 12px;
+  border-radius: 8px;
+  margin-top: 15px;
+  font-size: 12px;
+}
+
+.addCustomerBtn {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #f26a21;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.addCustomerBtn:hover {
+  background: #d95815;
+}
+
+.addCustomerBtn .material-symbols-outlined {
+  font-size: 18px;
+}
+
+/* =========================
+   EDIT BUTTON
+========================= */
+
+.editBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #fff0e8;
+  color: #f26a21;
+  padding: 8px 12px;
+  border-radius: 7px;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.editBtn:hover {
+  background: #f26a21;
+  color: white;
+}
+
+.editBtn .material-symbols-outlined {
+  font-size: 16px;
+}
+
+/* =========================
+   USER AVATAR DESIGN
+========================= */
+
+.userAvatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff0e8;
+  display: block;
+}
+
+.avatarPreview {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #f26a21;
+  margin: 10px 0;
+}
+
+.customerForm input[type="file"] {
+  background: #fff8f4;
+  cursor: pointer;
+}
