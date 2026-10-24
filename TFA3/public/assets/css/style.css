@@ -1,0 +1,771 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: #ffffff;
+  overflow-x: hidden;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 155px;
+  height: 100vh;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  display: flex;
+  flex-direction: column;
+
+  z-index: 1000;
+
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* AVA LOGO AREA */
+
+.icon {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 17px 15px;
+}
+
+.icon .material-symbols-outlined {
+  color: #f26a21;
+  font-size: 30px;
+}
+
+.icon h1 {
+  font-size: 17px;
+  line-height: 18px;
+  color: #161616;
+  font-weight: 700;
+}
+
+.icon p {
+  font-size: 8px;
+  color: #77808b;
+  white-space: nowrap;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav {
+  margin-top: 15px;
+  flex: 1;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0 12px;
+}
+
+nav ul li {
+  margin-bottom: 5px;
+}
+
+nav ul li a {
+  width: 100%;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+
+  text-decoration: none;
+
+  color: #526071;
+
+  font-size: 12px;
+  font-weight: 500;
+
+  padding: 0 12px;
+
+  border-radius: 9px;
+
+  transition: 0.25s ease;
+}
+
+nav ul li a .material-symbols-outlined {
+  font-size: 21px;
+}
+
+/* HOME ACTIVE */
+
+nav ul li a.active {
+  background: #fff0e7;
+  color: #f26a21;
+}
+
+/* HOVER */
+
+nav ul li a:hover {
+  background: #fff0e7;
+  color: #f26a21;
+}
+
+/* LOGOUT SA BOTTOM */
+
+nav ul li:last-child {
+  position: absolute;
+  bottom: 20px;
+
+  width: calc(100% - 24px);
+}
+
+/* =========================
+   MAIN SECTION
+========================= */
+
+.mainSection {
+  margin-left: 155px;
+
+  width: calc(100vw - 155px);
+  height: 100vh;
+}
+
+/* BACKGROUND IMAGE */
+
+.homeBackground {
+  width: 100%;
+  height: 100%;
+
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.22) 0%,
+      rgba(255, 255, 255, 0.08) 40%,
+      rgba(255, 255, 255, 0) 70%
+    ),
+    url("../images/home_background.png");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding-left: 48px;
+  padding-bottom: 35px;
+}
+
+/* =========================
+   HERO TEXT
+========================= */
+
+.homeBackground h4 {
+  font-size: 11px;
+
+  letter-spacing: 4px;
+
+  color: #172430;
+
+  font-weight: 600;
+
+  margin-bottom: 20px;
+}
+
+.homeBackground h1 {
+  font-size: 52px;
+
+  line-height: 1.05;
+
+  color: #172430;
+
+  font-weight: 700;
+}
+
+/* AVA ORANGE */
+
+.homeBackground h1:nth-of-type(2) {
+  color: #ee651d;
+
+  margin-bottom: 15px;
+}
+
+/* DESCRIPTION */
+
+.homeBackground p {
+  font-size: 15px;
+
+  color: #667585;
+
+  line-height: 1.55;
+}
+
+/* ======================================================= */
+/* ==                                                   == */
+/* ==                    Customers                      == */
+/* ==                                                   == */
+/* ======================================================= */
+
+/* =========================
+   CUSTOMER PAGE
+========================= */
+
+.mainSectionList {
+  margin-left: 155px;
+  width: calc(100% - 155px);
+
+  min-height: 100vh;
+
+  background: #f7f7f7;
+
+  padding: 28px 30px;
+}
+
+/* =========================
+   CUSTOMER BANNER
+========================= */
+
+.upperPicture {
+  width: 100%;
+  height: 185px;
+
+  background-image: url("../images/customer_background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  border-radius: 10px;
+
+  padding: 28px 30px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  margin-bottom: 18px;
+
+  background-image: url("../images/listPicture.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* SMALL TITLE */
+
+.upperPicture h4 {
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 3px;
+
+  color: #172430;
+
+  margin-bottom: 8px;
+}
+
+/* MAIN TITLE */
+
+.upperPicture h1 {
+  margin: 0;
+
+  font-size: 36px;
+
+  line-height: 1.05;
+
+  font-weight: 700;
+
+  color: #172430;
+}
+
+/* ORANGE VALUED CUSTOMERS */
+
+.upperPicture h1:nth-of-type(2) {
+  color: #f26922;
+
+  margin-bottom: 10px;
+}
+
+/* DESCRIPTION */
+
+.upperPicture p {
+  margin: 0;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+
+  color: #667382;
+}
+
+/* =========================
+   CUSTOMER LIST CONTAINER
+========================= */
+
+.customerListSection {
+  width: 100%;
+
+  background: #ffffff;
+
+  border-radius: 10px;
+  padding: 15px;
+
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
+}
+
+/* =========================
+   LIST TITLE
+========================= */
+
+.upperListTitle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+/* ORANGE ICON BOX */
+
+.listIcon {
+  width: 48px;
+  height: 48px;
+
+  border-radius: 10px;
+
+  background: #fff0e8;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.listIcon .material-symbols-outlined {
+  font-size: 29px;
+
+  color: #f26922;
+}
+
+/* TITLE TEXT */
+
+.listText h1 {
+  margin: 0;
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  color: #172430;
+}
+
+.listText p {
+  margin: 2px 0 0;
+
+  font-size: 11px;
+
+  color: #7b8794;
+}
+
+/* =========================
+   TABLE
+========================= */
+
+.customerListSection table {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  font-size: 12px;
+
+  overflow: hidden;
+}
+
+/* TABLE HEADER */
+
+.customerListSection thead {
+  background: #f1f3f5;
+}
+
+.customerListSection th {
+  text-align: left;
+
+  padding: 11px 14px;
+
+  color: #566372;
+
+  font-size: 11px;
+
+  font-weight: 600;
+}
+
+/* TABLE CONTENT */
+
+.customerListSection td {
+  padding: 13px 14px;
+
+  color: #172430;
+
+  border-bottom: 1px solid #eeeeee;
+}
+
+/* FIRST COLUMN / FULL NAME */
+
+.customerListSection tbody td:first-child {
+  font-weight: 500;
+}
+
+/* ROW HOVER */
+
+.customerListSection tbody tr {
+  transition: 0.2s ease;
+}
+
+.customerListSection tbody tr:hover {
+  background: #fff8f4;
+}
+
+/* REMOVE LAST BORDER */
+
+.customerListSection tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* ======================================================= */
+/* ==                                                   == */
+/* ==                    About                          == */
+/* ==                                                   == */
+/* ======================================================= */
+
+/* =========================
+   ABOUT PAGE
+========================= */
+
+.mainSectionAbout {
+  margin-left: 155px;
+  width: calc(100% - 155px);
+
+  min-height: 100vh;
+
+  padding: 28px 30px;
+
+  background: #f7f7f7;
+}
+
+/* =========================
+   ABOUT BANNER
+========================= */
+
+.upperAbout {
+  width: 100%;
+  height: 225px;
+
+  background-image: url("../images/aboutPicture.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  border-radius: 10px;
+
+  padding: 28px 30px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* SMALL TITLE */
+
+.upperAbout h4 {
+  margin: 0 0 14px;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 3px;
+
+  color: #172430;
+}
+
+/* MAIN TITLE */
+
+.upperAbout h1 {
+  margin: 0;
+
+  font-size: 40px;
+  line-height: 1.05;
+
+  font-weight: 700;
+
+  color: #172430;
+}
+
+/* ORANGE SECOND LINE */
+
+.upperAbout h1:nth-of-type(2) {
+  color: #f26522;
+
+  margin-bottom: 12px;
+}
+
+/* DESCRIPTION */
+
+.upperAbout p {
+  margin: 0;
+
+  font-size: 12px;
+  line-height: 1.55;
+
+  color: #657382;
+}
+
+/* =========================
+   ABOUT CONTENT
+========================= */
+
+.aboutSection {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 16px 4px 0;
+}
+
+/* =========================
+   PURPOSE
+========================= */
+
+.purposeAbout {
+  margin-bottom: 18px;
+}
+
+.purposeAbout h3 {
+  margin: 0 0 4px;
+
+  font-size: 18px;
+  font-weight: 700;
+
+  color: #172430;
+}
+
+.purposeAbout p {
+  margin: 0;
+
+  font-size: 11px;
+  line-height: 1.55;
+
+  color: #657382;
+}
+
+/* =========================
+   ABOUT CARDS
+========================= */
+
+.aboutCards {
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+
+  gap: 16px;
+
+  margin-bottom: 18px;
+}
+
+/* CARD */
+
+.card {
+  flex: 1;
+
+  min-height: 82px;
+
+  background: #ffffff;
+
+  border-radius: 8px;
+
+  padding: 14px;
+
+  display: grid;
+
+  grid-template-columns: 52px 1fr;
+  grid-template-rows: auto auto;
+
+  column-gap: 12px;
+
+  align-items: center;
+
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+}
+
+/* CARD ICON */
+
+.card .cardIcon {
+  width: 52px;
+  height: 52px;
+
+  grid-row: 1 / 3;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #fff0e8;
+}
+
+.card .cardIcon .material-symbols-outlined {
+  font-size: 28px;
+
+  color: #f26522;
+}
+
+/* SECOND CARD COLOR */
+
+.card:nth-child(2) .cardIcon {
+  background: #eaf5ff;
+}
+
+.card:nth-child(2) .cardIcon .material-symbols-outlined {
+  color: #1976c8;
+}
+
+/* THIRD CARD COLOR */
+
+.card:nth-child(3) .cardIcon {
+  background: #e7f8ed;
+}
+
+.card:nth-child(3) .cardIcon .material-symbols-outlined {
+  color: #22a55b;
+}
+
+/* CARD TEXT */
+
+.card h4 {
+  margin: 0;
+
+  align-self: end;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  color: #172430;
+}
+
+.card p {
+  margin: 2px 0 0;
+
+  align-self: start;
+
+  font-size: 10px;
+  line-height: 1.45;
+
+  color: #657382;
+}
+
+/* =========================
+   DIVIDER
+========================= */
+
+.aboutSection hr {
+  width: 100%;
+
+  border: none;
+  border-top: 1px solid #e3e3e3;
+
+  margin: 0 0 18px;
+}
+
+/* =========================
+   QUOTE SECTION
+========================= */
+
+.saying {
+  position: relative;
+
+  min-height: 92px;
+
+  display: grid;
+
+  grid-template-columns: 58px 1fr;
+
+  column-gap: 16px;
+
+  align-items: center;
+}
+
+/* QUOTE ICON */
+
+.saying .cardIcon {
+  width: 58px;
+  height: 58px;
+
+  grid-row: 1 / 3;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #fff0e8;
+
+  border-radius: 50%;
+}
+
+.saying .cardIcon .material-symbols-outlined {
+  font-size: 28px;
+
+  color: #f26522;
+}
+
+/* QUOTE TEXT */
+
+.saying h3 {
+  margin: 0;
+
+  align-self: end;
+
+  font-size: 14px;
+  font-weight: 500;
+  font-style: italic;
+
+  color: #172430;
+}
+
+.saying p {
+  margin: 5px 0 0;
+
+  align-self: start;
+
+  font-size: 10px;
+
+  color: #657382;
+}
+
+/* SMALL ORANGE LINE */
+
+.saying p::before {
+  content: "";
+
+  display: inline-block;
+
+  width: 20px;
+  height: 1px;
+
+  margin-right: 10px;
+  margin-bottom: 3px;
+
+  background: #f26522;
+}
+
